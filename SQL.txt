@@ -1,0 +1,32 @@
+-- Create a database
+CREATE DATABASE college_events;
+
+-- Use the database
+USE college_events;
+
+-- Users Table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+-- Events Table
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    event_date DATE,
+    image_url VARCHAR(255)
+);
+
+-- Event Registrations Table
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    event_id INT,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (event_id) REFERENCES events(id)
+);

@@ -1,0 +1,200 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Body Container */
+.container {
+    width: 100%;
+    max-width: 450px;
+    margin: 100px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #3a3a3a;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    font-size: 1.1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #004080;
+    transform: translateY(1px);
+}
+
+/* Success/Error Messages */
+.message, .error {
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.message {
+    background-color: #28a745;
+    color: white;
+}
+
+.error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Links */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Home page styles */
+.welcome-message {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #0056b3;
+}
+
+/* Floating background animation */
+@keyframes backgroundAnimate {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Container background gradient animation */
+.container {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    background-size: 200% 200%;
+    animation: backgroundAnimate 3s ease-in-out infinite;
+}
+
+/* Button and input hover/active effect */
+button, input {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Focus and hover states for better interaction */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    transform: scale(1.05);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    transform: scale(1.03);
+}
+
+/* Add some light animation on page load */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .welcome-message {
+        font-size: 1.5rem;
+    }
+}
